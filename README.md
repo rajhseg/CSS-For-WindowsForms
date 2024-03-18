@@ -9,4 +9,113 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 5. you can assign styles using controlType or classname or controlname etc.
 6. Property value which needs styles can be separated through "." dot, collections needs to represent as "[1]".
 
+**Sample Styles Definition: styles.json**
 
+{
+  "name": "style1",
+  "files": [
+   	{ 
+   		"sheetname" : "sheet1",
+   		"styles":[
+        { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "MainForm",
+            "excludecontrolnames": [ "txt3", "txt4"],
+            "props": [
+                { "name":"Font", "value":"Microsoft Sans Serif, 8pt" },
+                { "name":"BackColor", "value":"Red" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+        { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "Button",
+            "props": [ 
+				{ "name":"Font", "value":"Microsoft Sans Serif, 12pt" },            
+                { "name":"BackColor", "value":"blue" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+         { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "DataGridView",
+            "props": [
+                { "name":"BackgroundColor", "value":"Orange" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+        {
+        	"controlname":"",
+        	"classname":"tabclass1",
+        	"controltype":"",
+        	"props": [
+                { "name":"TabPages[0].BackColor", "value":"Orange" },
+                { "name":"Padding", "value":"2,2" }                
+            ]
+        },
+         {
+        	"controlname":"",
+        	"classname":"",
+        	"controltype":"Label",
+        	"props": [{ "name":"ForeColor", "value":"White" }]
+        }
+    ]
+
+	},
+    { 
+   		"sheetname" : "sheet2",
+		"styles":[
+        { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "MainForm",
+            "excludecontrolnames": [ "txt3", "txt4"],
+            "props": [
+                { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
+                { "name":"BackColor", "value":"Blue" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+        { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "Button",
+            "props": [               
+                { "name":"BackColor", "value":"Red" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+         { 
+            "controlname": "",
+            "classname": "",
+            "controltype": "DataGridView",
+            "props": [
+                { "name":"BackgroundColor", "value":"Blue" },
+                { "name":"Padding", "value":"2,2,2,2" }                
+            ]
+        },
+        {
+        	"controlname":"",
+        	"classname":"tabclass1",
+        	"controltype":"",
+        	"props": [
+                { "name":"TabPages[0].BackColor", "value":"Blue" },
+                { "name":"Padding", "value":"2,2" }                
+            ]
+        },
+        {
+        	"controlname":"",
+        	"classname":"",
+        	"controltype":"Label",
+        	"props": [
+                { "name":"ForeColor", "value":"White" }                           
+            ]
+        }
+    ]   		
+    }
+  
+  ]
+}
