@@ -4,7 +4,7 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 **Steps:**
 1. DragDrop this component in UI.
 2. Set the ApplyStyle property to True for each control which needs to apply style.
-3. Default style file is styles.json
+3. Default style file is **styles.json** , and default sheetname must present in file is **sheet1** .	**"sheetname" : "sheet1" in styles.json** ,
 4. if you configure the style with class name, please specify the classname in the control property.
 5. you can assign styles using controlType or classname or controlname etc.
 6. Property value which needs styles can be separated through "." dot, collections needs to represent as "[1]".
