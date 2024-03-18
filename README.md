@@ -11,8 +11,11 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 
 
 **Sample Styles Definition: styles.json**
- { "name":"TabPages[0].BackColor", "value":"Blue" },
- { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
- { "name":"BackColor", "value":"Blue" },
+
+ 1. { "name":"TabPages[0].BackColor", "value":"Blue" },
+ 2. { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
+ 3. { "name":"BackColor", "value":"Blue" },
+
+
 
  
