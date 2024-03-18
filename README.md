@@ -35,10 +35,4 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 
 
 
-
-![sample2](https://github.com/rajhseg/CascadingStylesheet-For-WindowsForms/assets/9523832/22bb6171-5af2-4037-9bfe-717246d0b816)
-
-
-
-
  
