@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -33,14 +34,15 @@ namespace CssLibrary
 		}
 		
 		private WinformsStyleLoader()
-		{			
+		{		
+						
 		}
 		
 		public void Load(string filename = "styles.json"){						
 			var assemblypath = Assembly.GetCallingAssembly().Location;
 			var dirinfo = new DirectoryInfo(assemblypath).Parent.FullName;
 			string styleData = File.ReadAllText(dirinfo+"\\"+filename);
-		    winformTheme = JsonConvert.DeserializeObject<WinFormTheme>(styleData);
+		    winformTheme = JsonConvert.DeserializeObject<WinFormTheme>(styleData);		  
 		}
 		
 		public static void SetSheetName(string sheetname){
@@ -54,7 +56,11 @@ namespace CssLibrary
 		public void RenderStyle() {
 			
 			var selectedSheet = winformTheme.Files.Where(x=>x.SheetName == winformsheetname).FirstOrDefault();
-			
+						 
+		    foreach (var element in selectedSheet.ResourcexFiles) {
+				ResourceManagerExtensions.LoadResources(element);
+		    }
+		    									
 			if(selectedSheet!=null){
 				
 				foreach (DictionaryEntry element in controls) {
@@ -106,8 +112,25 @@ namespace CssLibrary
 				
 				if(actualSetProp!=null) {					
 				   
+					string resourcename = string.Empty;
+					bool isFromResourceFile =false;
+					
+					if(applyValue.Contains("||")){
+						var splitResources = applyValue.Split(new string [] {"||"}, StringSplitOptions.None);
+						isFromResourceFile = true;
+						resourcename = splitResources[0];
+						applyValue = splitResources[1];
+					}									
+					 
 					Type t = Nullable.GetUnderlyingType(actualSetProp.PropertyType) ?? actualSetProp.PropertyType;
-					object safeValue =  RuntimeHelpers.GetObjectValue(TypeDescriptor.GetConverter(t).ConvertFromString(applyValue));				
+					object safeValue = null;
+					
+					if(isFromResourceFile){
+						safeValue  = ResourceManagerExtensions.GetObject(resourcename, applyValue);										 	
+					}
+					else {
+				 		safeValue =  RuntimeHelpers.GetObjectValue(TypeDescriptor.GetConverter(t).ConvertFromString(applyValue));
+					}
 					
 					if(actualSetProp.CanWrite) {
 				    	actualSetProp.SetValue(propInfoObj, safeValue, null);					    									    												
@@ -117,7 +140,7 @@ namespace CssLibrary
 					                		+"), please set the value for parent property in string");
 					}
 			}
-		}
+		 }
 		}
 		
 		private object GetTargetingObjectToApplyValueForProperty(object obj, string[] propsList, int currentIndex){

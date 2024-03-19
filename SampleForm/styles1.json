@@ -12,7 +12,9 @@
             "props": [
                 { "name":"Font", "value":"Microsoft Sans Serif, 8pt" },
                 { "name":"BackColor", "value":"Red" },
-                { "name":"Padding", "value":"2,2,2,2" }                
+                { "name":"Padding", "value":"2,2,2,2" },
+				{ "name": "BackgroundImage", "value":"ResxFiles//ImageResource.resx||sample1" },
+				{ "name": "BackgroundImageLayout", "value":"Stretch" }                   
             ]
         },
         { 

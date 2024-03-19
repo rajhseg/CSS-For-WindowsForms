@@ -20,6 +20,9 @@ public class WinFormFiles {
 	[JsonProperty("sheetname", Required = Required.Always)]
 	public string SheetName {get; set;}
 	
+	[JsonProperty("resxfiles")]
+	public List<string> ResourcexFiles {get;set; }
+	
 	[JsonProperty("styles")]
     public List<WinFormsStyles> Styles {get;set;}
 }

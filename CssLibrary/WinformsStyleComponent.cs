@@ -23,7 +23,7 @@ namespace CssLibrary
 		}
 		
 		public WinformsStyleComponent(IContainer parent) : this() {
-			parent.Add(this);
+			parent.Add(this);			
 		}
 		
 		public bool GetApplyStyles(Control item){
