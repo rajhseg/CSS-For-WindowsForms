@@ -3,7 +3,7 @@
   "files": [
    	{ 
    		"sheetname" : "sheet1",
-   		"resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource.resx"],
+   		"resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource1.resx"],
    		"styles":[
         { 
             "controlname": "",
@@ -59,7 +59,7 @@
 	},
     { 
    		"sheetname" : "sheet2",
-   		"resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource.resx"],
+   		"resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource1.resx"],
 		"styles":[
         { 
             "controlname": "",
