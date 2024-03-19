@@ -13,7 +13,7 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 
 **Sample Styles Definition: styles.json**
 
- 1. "resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource.resx"],
+ 1. "resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource1.resx"],
  2. { "name":"TabPages[0].BackColor", "value":"Blue" },
  3. { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
  4. { "name":"BackColor", "value":"Blue" },
