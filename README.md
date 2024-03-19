@@ -8,13 +8,17 @@ This repo is consists of cascading stylesheet kind of implementation for windows
 4. if you configure the style with class name, please specify the classname in the control property.
 5. you can assign styles using controlType or classname or controlname etc.
 6. Property value which needs styles can be separated through "." dot, collections needs to represent as "[1]".
+7. For applying a image to a control, first we have to add **resource.resx** file and add item image as resource. for example in our demo we have added a **"ImageResource.resx"** file, then set the property **"copy to output": "always"** for that resx. then add that **file path to styles.json** in resxfiles section as mentioned in below snippet. then in BackgroundImage property value must be specified as **"resx_path||filekey_name_inResx"**
 
 
 **Sample Styles Definition: styles.json**
 
- 1. { "name":"TabPages[0].BackColor", "value":"Blue" },
- 2. { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
- 3. { "name":"BackColor", "value":"Blue" },
+ 1. "resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource.resx"],
+ 2. { "name":"TabPages[0].BackColor", "value":"Blue" },
+ 3. { "name":"Font", "value":"Microsoft Sans Serif, 10pt" },
+ 4. { "name":"BackColor", "value":"Blue" },
+ 5. { "name": "BackgroundImage", "value":"ResxFiles//ImageResource.resx||sample1" },
+ 6. { "name": "BackgroundImageLayout", "value":"Stretch" }   
 
 
 
