@@ -57,9 +57,11 @@ namespace CssLibrary
 			
 			var selectedSheet = winformTheme.Files.Where(x=>x.SheetName == winformsheetname).FirstOrDefault();
 						 
-		    foreach (var element in selectedSheet.ResourcexFiles) {
-				ResourceManagerExtensions.LoadResources(element);
-		    }
+			if(selectedSheet.ResourcexFiles!=null) {
+			    foreach (var element in selectedSheet.ResourcexFiles) {
+					ResourceManagerExtensions.LoadResources(element);
+			    }
+			}
 		    									
 			if(selectedSheet!=null){
 				

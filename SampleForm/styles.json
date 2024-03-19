@@ -59,6 +59,7 @@
 	},
     { 
    		"sheetname" : "sheet2",
+   		"resxfiles": ["ResxFiles//ImageResource.resx", "ResxFiles//ImageResource.resx"],
 		"styles":[
         { 
             "controlname": "",
