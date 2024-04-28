@@ -1,4 +1,4 @@
-# CascadingStylesheet For WindowsForms
+# CSS For WindowsForms
 This repo is consists of CSS kind of implementation for windows forms, we can apply styles using classnames, controlnames and controltype.
 
 **Steps:**
